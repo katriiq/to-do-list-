@@ -136,3 +136,33 @@ body {
     opacity: 0.8;
 }
 
+.task-item.high-priority{
+    border-left: 8px solid white;
+}
+
+.task-item.medium-priority{
+    border-left: 8px solid rgb(111, 108, 108);
+}
+
+.task-item.low-priority{
+    border-left: 8px solid rgb(0, 0, 0);
+}
+
+.task-item.complited{
+    background-color: rgb(155, 149, 155);
+    opacity: 0.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.task-item.complited .task-content{
+    text-decoration: line-through;
+
+}
+
+.task-list:not(:has(>*))::before {
+    content: "Пока нет задач. Вы все выполнили!";
+    padding: 30px;
+    display: block;
+    font-style: italic;
+    text-align: center;
+}
