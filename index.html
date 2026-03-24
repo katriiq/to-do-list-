@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои дела</title>
     <link rel="stylesheet" type="text/css" href="stile.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"  />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
-
 <body>
     <div class="main">
         <h1 class="header">список моих дел </h1>
@@ -16,9 +14,8 @@
             <input id="input-task" placeholder="новая задача">
             <button id="add-btn">Добавить</button>
         </div>
-        <ul class="task-list">
-            <li class="task-item low-priority complited"
-            onclick="this.classList.toggle('complited')">
+        <ul id='task-list' class="task-list">
+            <li class="task-item low-priority complited" onclick="this.classList.toggle('complited')">
                 <span class="task-content"> купить зимнюю куртку</span>
                 <div class="task-actions">
                     <button class="task-btn"><span class="material-symbols-outlined">
@@ -29,45 +26,43 @@
                     </button>
                 </div>
             </li>
-            <li class="task-item high-priority" 
-            onclick="this.classList.toggle('complited')">
+            <li class="task-item high-priority" onclick="this.classList.toggle('complited')">
                 <span class="task-content"> убраться дома</span>
                 <div class="task-actions">
                     <button class="task-btn">
                         <span class="material-symbols-outlined">
                             edit
                         </span></button>
-                        <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>    
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
                 </div>
             </li>
-            <li class="task-item medium-priority"
-            onclick="this.classList.toggle('complited')">
+            <li class="task-item medium-priority" onclick="this.classList.toggle('complited')">
                 <span class="task-content"> протереть пыль</span>
                 <div class="task-actions">
                     <button class="task-btn"><span class="material-symbols-outlined">
                             edit
                         </span></button>
-                        <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>    
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
                 </div>
             </li>
-            <li class="task-item medium-priority"
-            onclick="this.classList.toggle('complited')">
+            <li class="task-item medium-priority" onclick="this.classList.toggle('complited')">
                 <span class="task-content"> приготовить обед</span>
                 <div class="task-actions">
                     <button class="task-btn"><span class="material-symbols-outlined">
                             edit
                         </span></button>
-                        <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
-                            <span class="material-symbols-outlined">delete</span>
-                        </button>    
+                    <button class="task-btn" onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
                 </div>
             </li>
         </ul>
     </div>
 </body>
+<script src="index.js"></script>
 
 </html>
