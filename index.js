@@ -66,20 +66,55 @@ function createTaskElement(task) {
 
     newTaskEl.innerHTML = `
     <span class="task-content">${task.title}</span>
-    <div class="task-actons">
-        <button class="task-btn">
+    <div class="task-actions">
+        <button class="task-btn btn-delete">
             <span class="material-symbols-outlined">delete</span>
+        </button>
+
+        <button class="task-btn btn-change-priority">
+        <span class="material-symbols-outlined">expand_all</span>
         </button>
     </div>`
 
     newTaskEl
-    .querySelector('button.task-btn')
-    .addEventListener('click' , (ev) => {
-        ev.currentTarget.parentNode.parentNode.remove()
-        TASKS = TASKS.filter(x => x.title != task.title)
-        taskStorage.save(TASKS)
-    })
+        .querySelector('button.btn-delete')
+        .addEventListener('click', (ev) => {
+            ev.currentTarget.parentNode.parentNode.remove()
+            TASKS = TASKS.filter(x => x.title != task.title)
+            taskStorage.save(TASKS)
+        })
 
+    newTaskEl
+        .querySelector('button.btn-change-priority')
+        .addEventListener('click', (ev) => {
+            ev.stopPropagation()
+            ev.preventDefault()
+            console.log('меняем приоритет')
+
+            const el = ev.currentTarget.parentNode.parentNode
+
+
+            switch (task.priority) {
+                case 'low':
+                    task.priority = 'medium'
+                    el.classList.remove('low-priority')
+                    el.classList.add('medium-priority')
+                    break
+                case 'medium':
+                    task.priority = 'high'
+                    el.classList.remove('medium-priority')
+                    el.classList.add('high-priority')
+                    break
+                default: {
+                    task.priority = 'low'
+                    el.classList.remove('high-priority')
+                    el.classList.add('low-priority')
+                    break
+                }
+            }
+
+
+        })
     taskListEl.append(newTaskEl);
 }
 
